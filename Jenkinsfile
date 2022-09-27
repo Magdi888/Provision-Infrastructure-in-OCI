@@ -1,10 +1,10 @@
 pipeline {
     agent any
     environment {
-        tenancy_ocid     = credentials('tenancy_ocid')
-        user_ocid        = credentials('user_ocid')
-        fingerprint        = credentials('fingerprint')
-        private_key        = credentials('private_key')
+        TF_VAR_tenancy_ocid       = credentials('TF_VAR_tenancy_ocid')
+        TF_VAR_user_ocid          = credentials('TF_VAR_user_ocid')
+        TF_VAR_fingerprint        = credentials('TF_VAR_fingerprint')
+        TF_VAR_private_key        = credentials('TF_VAR_private_key')
     }
     stages {
 
