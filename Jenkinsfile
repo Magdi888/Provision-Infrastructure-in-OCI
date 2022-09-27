@@ -8,7 +8,7 @@ pipeline {
     }
     stages {
 
-        stage ('Generate key pairs') {
+        stage ('Generate key pairs for instance') {
             steps {
                 sh 'ssh-keygen -t rsa -b 4096 -f ~/.ssh/id_rsa -N ""'
             }
@@ -26,6 +26,11 @@ pipeline {
         stage ('Apply') {
             steps {
                 sh 'terraform apply --var-file var.tfvars --auto-approve -no-color'
+            }
+        }
+        stage ('Destroy') {
+            steps {
+                sh 'terraform destroy --var-file var.tfvars --auto-approve -no-color'
             }
         }
     }
