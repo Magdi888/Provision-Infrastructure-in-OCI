@@ -15,7 +15,7 @@ resource "oci_core_instance" "ubuntu_instance" {
         subnet_id = oci_core_subnet.public_subnet.id
     }
     metadata = {
-        ssh_authorized_keys = file("/home/ahmed/.oci/oci_api_key_public.pem")
+        ssh_authorized_keys = file("~/.ssh/id_rsa.pub")
     } 
     preserve_boot_volume = false
 }
