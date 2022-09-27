@@ -20,7 +20,7 @@ pipeline {
         }
         stage ('Plan') {
             steps {
-                sh 'terraform plan --var-file var.tfvars - no-color'
+                sh 'terraform plan --var-file var.tfvars -no-color'
             }
         }
         stage ('Apply') {
